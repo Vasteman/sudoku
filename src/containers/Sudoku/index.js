@@ -4,53 +4,13 @@ import styled from 'styled-components'
 import { checkField } from '../../utils/checker'
 import { generateField } from '../../utils/generator'
 
-// const field = [
-//   [1, 2, 3, 4, 5, 6, 7, 8, 9],
-//   [2, 3, 4, 5, 6, 7, 8, 9, 1],
-//   [3, 4, 5, 6, 7, 8, 9, 1, 2],
-//   [4, 5, 6, 7, 8, 9, 1, 2, 3],
-//   [5, 6, 7, 8, 9, 1, 2, 3, 4],
-//   [6, 7, 8, 9, 1, 2, 3, 4, 5],
-//   [7, 8, 9, 1, 2, 3, 4, 5, 6],
-//   [8, 9, 1, 2, 3, 4, 5, 6, 7],
-//   [9, 1, 2, 3, 4, 5, 6, 7, 8]
-// ]
-
-// const field = [
-//   [1, 1, 1, 2, 2, 2, 3, 3, 3],
-//   [1, 1, 1, 2, 2, 2, 3, 3, 3],
-//   [1, 1, 1, 2, 2, 2, 3, 3, 3],
-//   [4, 4, 4, 5, 5, 5, 6, 6, 6],
-//   [4, 4, 4, 5, 5, 5, 6, 6, 6],
-//   [4, 4, 4, 5, 5, 5, 6, 6, 6],
-//   [7, 7, 7, 8, 8, 8, 9, 9, 9],
-//   [7, 7, 7, 8, 8, 8, 9, 9, 9],
-//   [7, 7, 7, 8, 8, 8, 9, 9, 9]
-// ]
-
-let field = [
-  [1, 2, 3, 4, 5, 6, 7, 8, 9],
-  [4, 5, 6, 7, 8, 9, 1, 2, 3],
-  [7, 8, 9, 1, 2, 3, 4, 5, 6],
-  [2, 3, 4, 5, 6, 7, 8, 9, 1],
-  [5, 6, 7, 8, 9, 1, 2, 3, 4],
-  [8, 9, 1, 2, 3, 4, 5, 6, 7],
-  [3, 4, 5, 6, 7, 8, 9, 1, 2],
-  [6, 7, 8, 9, 1, 2, 3, 4, 5],
-  [9, 1, 2, 3, 4, 5, 6, 7, 8]
-]
-
-// let field = generateField()
-
 const Sudoku = () => {
   const handleClick = index => {
     console.log('index', index)
   }
-  field = generateField()
-  console.log(field)
+  const field = generateField()
   const [isValidField, invalidCells] = checkField(field)
-  console.log('isValidField', isValidField)
-  console.log('invalidCells', invalidCells)
+  console.log(isValidField)
 
   return (
     <Wrapper>
